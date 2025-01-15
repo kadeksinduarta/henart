@@ -1,0 +1,648 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  /* border: 1px solid black; */
+}
+
+:root {
+  --font-title: "Roboto", sans-serif;
+  --font-paragraf: "Poppins", sans-serif;
+  --size-paragraf: 0.9rem;
+  --size-title: 2rem;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: var(--font-paragraf);
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  display: flex;
+  padding: 0 8%;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  /* transition: all 3s ease-in-out; */
+}
+
+nav ul {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a img {
+  width: 200px;
+}
+
+nav h2 span {
+  color: #16424e;
+}
+
+nav ul li a {
+  transition: all 0.2s ease-in-out;
+  font-family: var(--font-paragraf);
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #000;
+}
+
+nav ul li a:hover {
+  /* font-weight: 500; */
+  color: #23616c;
+}
+
+nav .icon {
+  display: none;
+}
+
+nav .contactt {
+  padding: 10px 25px;
+  background-color: #cda351;
+  color: #fff;
+  border-radius: 12px;
+  font-weight: bold;
+  border: 2px solid white;
+}
+nav .contactt:hover {
+  font-weight: bold;
+  color: #cda351;
+  border: 2px solid #cda351;
+  background-color: #fff;
+}
+
+/* section main */
+
+section.main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 0 8%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(../gambar/background.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+section.main h1 {
+  font-size: 3rem;
+  font-family: var(--font-title);
+  color: #fff;
+  position: relative;
+  /* margin-bottom: 10px; */
+}
+
+section.main h1::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100px;
+  bottom: 0;
+  right: 50%;
+  border-radius: 10px;
+  transform: translateX(50%);
+  background-color: #ffffff;
+}
+
+section.main h1.typing {
+  display: inline-block;
+  /* margin-top: 20px; */
+  border-right: 2px solid #000;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.5s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+section.main p {
+  margin-top: 20px;
+  font-size: 1rem;
+  font-family: var(--font-paragraf);
+  color: #fff;
+}
+
+section.main .button-pesan {
+  display: inline-block;
+  margin-top: 30px;
+  color: #ffffff;
+  border: 2px solid #f2f2f2;
+  background-color: transparent;
+  padding: 10px 40px;
+  border-radius: 5px;
+}
+
+section.main img {
+  width: 500px;
+  margin-top: 100px;
+}
+
+.no-wa {
+  position: fixed;
+  right: 120px;
+  top: 80%;
+}
+
+.no-wa img {
+  position: absolute;
+  width: 80px;
+  transition: all 0.2s;
+}
+
+.no-wa img:hover {
+  position: absolute;
+  width: 70px;
+}
+
+section.about {
+  display: flex;
+  align-items: center;
+  /* margin-top: 20px; */
+  font-size: 1.1rem;
+  font-family: var(--font-paragraf);
+  color: #000;
+  padding: 30px 6%;
+  height: 90vh;
+  text-align: justify;
+  background-color: #fff;
+}
+
+section.about .gambar,
+section.about .paragraf {
+  flex: 1;
+}
+
+section.about .gambar img {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+
+section.Our-Plan {
+  padding: 30px 6%;
+  text-align: center;
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../gambar/gambar-proses-2.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+section.Our-Plan .title-information h1 {
+  font-size: 50px;
+  position: relative;
+}
+
+section.Our-Plan .title-information h1::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100px;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: #ffffff;
+}
+
+section.Our-Plan .visi-misi {
+  display: flex;
+  margin-top: 50px;
+  font-size: 1.1rem;
+}
+
+section.Our-Plan .visi-misi .Visi,
+section.Our-Plan .visi-misi .misi {
+  flex: 1;
+}
+
+section.Our-Plan .visi-misi h2 {
+  margin-top: 30px;
+}
+
+section.Our-Plan .visi-misi p {
+  padding: 20px;
+}
+
+section.about-2 {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  font-size: 1.1rem;
+  font-family: var(--font-paragraf);
+  color: #000;
+  padding: 30px 6%;
+  text-align: justify;
+  background-color: #fff;
+}
+
+section.about-2 .paragraf {
+  flex: 1.2;
+}
+
+section.about-2 .gambar {
+  flex: 1;
+}
+
+section.about-2 .gambar img {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  border-radius: 10px;
+}
+
+/* halaman undangan */
+section.Product {
+  padding: 20px 5%;
+  background-color: #e2decd;
+}
+
+section.Product .title-information {
+  text-align: center;
+}
+
+section.Product .title-information h1 {
+  font-size: 40px;
+  position: relative;
+}
+
+section.Product .title-information h1::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100px;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: #212121;
+}
+
+section.Product .title-information p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  text-align: center !important;
+}
+
+section.Product .container-product .paket h1 {
+  margin: 0 0 20px 0;
+  font-size: 17px;
+}
+
+section.Product .paket {
+  background-color: #fff;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 2px;
+}
+
+section.Product .paket .gambar {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+section.Product .paket .gambar img {
+  border-radius: 5px;
+  width: 300px;
+}
+
+/* gallery */
+.gallery {
+  padding: 30px 5%;
+  background-color: #fff;
+}
+
+.gallery h1 {
+  text-align: center;
+  font-size: 50px;
+  position: relative;
+}
+
+.gallery h1::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 70px;
+  bottom: 0;
+  right: 50%;
+  border-radius: 10px;
+  transform: translateX(50%);
+  background-color: #141414;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 10px;
+}
+
+.column img {
+  margin: 10px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  transform: scale(1.03);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #3e1801;
+  text-align: center;
+  padding: 30px 0;
+  color: #fff;
+}
+
+footer a img {
+  width: 150px;
+}
+
+footer p {
+  margin-bottom: 30px;
+}
+
+footer .media-sosial {
+  display: flex;
+  width: 130px;
+  margin: auto;
+  justify-content: space-around;
+}
+
+footer .media-sosial a img {
+  width: 20px;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+  nav {
+    background-color: #fff;
+  }
+
+  nav a img {
+    width: 100px;
+  }
+
+  nav .icon {
+    display: block;
+    /* transition: all 3s ease-in-out !important; */
+  }
+  nav ul {
+    width: 100%;
+    height: 40vh;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    top: 75px;
+    right: -100%;
+    position: absolute;
+    text-align: center;
+    background-color: #fff;
+    border-top: 1px solid black;
+    transition: right 0.3s ease;
+  }
+
+  nav ul.active {
+    right: 0;
+  }
+
+  nav ul li a {
+    /* background-color: #fff; */
+    display: block;
+    padding: 10px 90px;
+  }
+
+  section.main h1 {
+    font-size: 2rem;
+  }
+
+  section.main p {
+    font-size: 0.9rem;
+  }
+
+  section.main img {
+    display: none;
+  }
+
+  section.about,
+  section.about-2 {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  section.about .paragraf {
+    margin: 20px 0;
+  }
+
+  section.Our-Plan .visi-misi {
+    flex-direction: column;
+  }
+
+  section.Our-Plan .visi-misi h2 {
+    margin-top: 0px;
+    font-size: 18px;
+  }
+
+  section.Our-Plan .visi-misi p {
+    font-size: 15px;
+  }
+
+  section.about-2 .gambar img {
+    width: 100%;
+    margin-top: 20px;
+    margin: auto;
+    display: flex;
+    border-radius: 10px;
+  }
+
+  section.Product .paket .gambar {
+    gap: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  section.Product .container-product .paket h1 {
+    font-size: 13px;
+  }
+
+  section.Product .paket .gambar img {
+    border-radius: 5px;
+    width: 150px;
+  }
+
+  section.Our-Plan .title-information h1,
+  section.Product .title-information h1,
+  .gallery h1 {
+    font-size: 1.5rem;
+    width: 90%;
+    margin: auto;
+  }
+
+  .no-wa {
+    position: fixed;
+    right: 90px;
+    top: 85%;
+  }
+
+  .no-wa img {
+    position: absolute;
+    width: 70px;
+    transition: all 0.2s;
+  }
+
+  .no-wa img:hover {
+    position: absolute;
+    width: 60px;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}

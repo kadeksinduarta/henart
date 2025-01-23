@@ -15,6 +15,28 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// image slider
+function backgroundSlider() {
+  const section = document.querySelector(".main");
+
+  // Daftar gambar untuk slider
+  const images = ["gambar/background.jpg", "gambar/background-2.jpg", "gambar/background-3.jpg"];
+
+  let currentIndex = 0;
+
+  // Fungsi untuk mengubah gambar latar belakang
+  function changeBackground() {
+    currentIndex = (currentIndex + 1) % images.length; // Perulangan indeks
+    section.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(${images[currentIndex]})`;
+  }
+
+  // Jalankan perubahan gambar secara otomatis
+  setInterval(changeBackground, 4000); // Ganti gambar setiap 4 detik
+}
+
+// Panggil fungsi saat halaman dimuat
+document.addEventListener("DOMContentLoaded", backgroundSlider);
+
 // typing animate
 const textElement = document.querySelector(".typing");
 const text = "Henart.Design"; // Text to type

@@ -8,7 +8,7 @@
 }
 
 :root {
-  --font-title: "Roboto", sans-serif;
+  --font-title: "Ubuntu", serif;
   --font-paragraf: "Poppins", sans-serif;
   --size-paragraf: 0.9rem;
   --size-title: 2rem;
@@ -91,21 +91,15 @@ section.main {
   text-align: center;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
 }
-
-/* section.main .sliders {
-  width: 100%;
-  height: 100%;
-} */
-
 section.main h1 {
   font-size: 3rem;
   font-family: var(--font-title);
   color: #f3e5d8;
   position: relative;
-  /* margin-bottom: 10px; */
 }
-
 section.main h1::before {
   content: "";
   position: absolute;
@@ -117,7 +111,6 @@ section.main h1::before {
   transform: translateX(50%);
   background-color: #ffffff;
 }
-
 section.main h1.typing {
   display: inline-block;
   /* margin-top: 20px; */
@@ -147,7 +140,8 @@ section.main .button-pesan {
   margin-top: 30px;
   color: #ffffff;
   border: 2px solid #f2f2f2;
-  background-color: transparent;
+  background-color: var(--button-color);
+  font-weight: bold;
   padding: 10px 40px;
   border-radius: 5px;
 }
@@ -207,13 +201,15 @@ section.about-2 {
   font-family: var(--font-paragraf);
   color: var(--text-color);
   padding: 30px 6%;
-  text-align: justify;
-  background-color: var(--pramery-color);
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(../gambar/gambar-proses-2.jpeg);
+  background-attachment: fixed;
 }
 
 section.about-2 h1 {
   font-size: 18px;
   font-weight: 400;
+  color: #fff;
 }
 
 section.about-2 .gambar {
@@ -239,12 +235,15 @@ section.Product .title-information {
   text-align: center;
 }
 
-section.Product .title-information h1 {
-  font-size: 40px;
+section.Product .title-information h1,
+.gallery h1 {
+  font-size: 30px;
   position: relative;
+  text-align: center;
 }
 
-section.Product .title-information h1::before {
+section.Product .title-information h1::before,
+.gallery h1::before {
   content: "";
   position: absolute;
   height: 3px;
@@ -288,24 +287,6 @@ section.Product .paket .gambar img {
 .gallery {
   padding: 30px 5%;
   background-color: #fff;
-}
-
-.gallery h1 {
-  text-align: center;
-  font-size: 50px;
-  position: relative;
-}
-
-.gallery h1::before {
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 70px;
-  bottom: 0;
-  right: 50%;
-  border-radius: 10px;
-  transform: translateX(50%);
-  background-color: #141414;
 }
 
 .row {
@@ -458,6 +439,58 @@ footer {
   color: #fff;
 }
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.footer {
+  background-color: #1a202c;
+  color: white;
+  padding: 48px 16px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+.footer h3 {
+  font-size: 1.125rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.footer p,
+.footer li {
+  color: #a0aec0;
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+}
+.footer a {
+  color: #a0aec0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer a:hover {
+  color: white;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer .social-icons {
+  display: flex;
+  gap: 16px;
+}
+.footer .social-icons img,
+.footer .social-icons svg {
+  width: 24px;
+  height: 24px;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 48px;
+  color: #718096;
+}
+
 footer a img {
   width: 150px;
 }
@@ -577,7 +610,6 @@ footer .media-sosial a img {
     width: 150px;
   }
 
-  section.Our-Plan .title-information h1,
   section.Product .title-information h1,
   .gallery h1 {
     font-size: 1.5rem;

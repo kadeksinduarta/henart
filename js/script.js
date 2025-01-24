@@ -20,18 +20,24 @@ function backgroundSlider() {
   const section = document.querySelector(".main");
 
   // Daftar gambar untuk slider
-  const images = ["gambar/background.jpg", "gambar/background-2.jpg", "gambar/background-3.jpg"];
+  const images = ["gambar/background.jpeg", "gambar/background-2.jpg", "gambar/background-3.jpeg"];
 
   let currentIndex = 0;
 
   // Fungsi untuk mengubah gambar latar belakang
   function changeBackground() {
-    currentIndex = (currentIndex + 1) % images.length; // Perulangan indeks
-    section.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(${images[currentIndex]})`;
+    const nextIndex = (currentIndex + 1) % images.length; // Hitung indeks berikutnya
+    section.style.backgroundImage = `
+      linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
+      url(${images[nextIndex]}),
+      url(${images[currentIndex]})
+    `; // Layer pertama adalah gambar baru, layer kedua adalah gambar lama
+
+    currentIndex = nextIndex;
   }
 
   // Jalankan perubahan gambar secara otomatis
-  setInterval(changeBackground, 4000); // Ganti gambar setiap 4 detik
+  setInterval(changeBackground, 5000); // Ganti gambar setiap 5 detik
 }
 
 // Panggil fungsi saat halaman dimuat

@@ -444,7 +444,7 @@ body {
   font-family: Arial, sans-serif;
 }
 .footer {
-  background-color: #1a202c;
+  background-color: var(--text-color);
   color: white;
   padding: 48px 16px;
   margin-top: 20px;

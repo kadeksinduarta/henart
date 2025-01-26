@@ -81,7 +81,7 @@ nav .contactt {
 /* section main */
 
 section.main {
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(../gambar/background.jpeg);
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(../gambar/background.jpg);
   display: flex;
   width: 100%;
   height: 100vh;
@@ -365,8 +365,7 @@ section.Product .paket .gambar img {
 }
 
 .mySlides {
-  transition: opacity 0.5s ease-in-out; /* Fade-in effect */
-  opacity: 0;
+  display: none;
 }
 
 .cursor {

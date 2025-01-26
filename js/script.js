@@ -15,11 +15,6 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// scroll halus
-Scrollbar.init(document.body, {
-  damping: 0.1, // Sesuaikan tingkat kehalusan
-});
-
 // image slider
 function preloadImages(imageUrls) {
   imageUrls.forEach((url) => {
@@ -86,27 +81,39 @@ function consistentTypingEffect() {
 consistentTypingEffect();
 
 // gallery
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var captionText = document.getElementById("caption");
-
   if (n > slides.length) {
     slideIndex = 1;
   }
   if (n < 1) {
     slideIndex = slides.length;
   }
-
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.opacity = "0"; // Mulai transparan
     slides[i].style.display = "none";
   }
 
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(() => {
-    slides[slideIndex - 1].style.opacity = "1"; // Tambahkan efek fade
-  }, 10);
-
-  captionText.innerHTML = slides[slideIndex - 1].alt;
+  captionText.innerHTML = dots[slideIndex - 1].alt;
 }

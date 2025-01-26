@@ -68,7 +68,7 @@ nav .contactt {
   padding: 10px 25px;
   /* background-color: var(--button-color); */
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 5px;
   font-weight: bold;
   border: 2px solid #cda351;
   color: #cda351;
@@ -93,6 +93,7 @@ section.main {
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image 0.5s ease;
+  transition: all 0.5s;
 }
 section.main h1 {
   font-size: 3rem;
@@ -195,7 +196,7 @@ section.about .gambar img {
 section.about-2 {
   display: flex;
   align-items: center;
-  height: 90vh;
+  height: 110vh;
   flex-direction: column;
   font-size: 1.1rem;
   font-family: var(--font-paragraf);
@@ -364,7 +365,8 @@ section.Product .paket .gambar img {
 }
 
 .mySlides {
-  display: none;
+  transition: opacity 0.5s ease-in-out; /* Fade-in effect */
+  opacity: 0;
 }
 
 .cursor {
@@ -459,12 +461,12 @@ body {
 }
 .footer p,
 .footer li {
-  color: #a0aec0;
+  color: #ffff;
   margin: 0 0 8px 0;
   line-height: 1.5;
 }
 .footer a {
-  color: #a0aec0;
+  color: #ffff;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -512,10 +514,6 @@ footer .media-sosial a img {
 
 /* Responsive */
 @media (max-width: 950px) {
-  nav {
-    background-color: #fff;
-  }
-
   nav a img {
     width: 100px;
   }
@@ -534,7 +532,7 @@ footer .media-sosial a img {
     right: -100%;
     position: absolute;
     text-align: center;
-    background-color: #fff;
+    background-color: var(--pramery-color);
     border-top: 1px solid black;
     transition: right 0.3s ease;
   }
@@ -565,6 +563,8 @@ footer .media-sosial a img {
   section.about-2 {
     flex-direction: column;
     height: 100%;
+    background-position: center;
+    background-size: cover;
   }
 
   section.about-2 h1 {
@@ -576,12 +576,12 @@ footer .media-sosial a img {
     display: flex;
     flex-direction: column;
     /* justify-content: space-evenly; */
-    gap: 10px;
+    gap: 30px;
     margin-top: 30px;
   }
 
   section.about-2 .gambar img {
-    width: 100%;
+    width: 70%;
     margin: auto;
     display: flex;
     border-radius: 10px;

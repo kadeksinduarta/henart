@@ -15,12 +15,27 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// scroll halus
+Scrollbar.init(document.body, {
+  damping: 0.1, // Sesuaikan tingkat kehalusan
+});
+
 // image slider
+function preloadImages(imageUrls) {
+  imageUrls.forEach((url) => {
+    const img = new Image();
+    img.src = url;
+  });
+}
+
 function backgroundSlider() {
   const section = document.querySelector(".main");
 
   // Daftar gambar untuk slider
-  const images = ["gambar/background.jpeg", "gambar/background-2.jpg", "gambar/background-3.jpeg"];
+  const images = ["gambar/background.jpg", "gambar/background-2.jpg", "gambar/background-3.jpg"];
+
+  // Preload semua gambar
+  preloadImages(images);
 
   let currentIndex = 0;
 
@@ -29,10 +44,8 @@ function backgroundSlider() {
     const nextIndex = (currentIndex + 1) % images.length; // Hitung indeks berikutnya
     section.style.backgroundImage = `
       linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
-      url(${images[nextIndex]}),
-      url(${images[currentIndex]})
-    `; // Layer pertama adalah gambar baru, layer kedua adalah gambar lama
-
+      url(${images[nextIndex]})
+    `;
     currentIndex = nextIndex;
   }
 
@@ -73,39 +86,27 @@ function consistentTypingEffect() {
 consistentTypingEffect();
 
 // gallery
-function openModal() {
-  document.getElementById("myModal").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("myModal").style.display = "none";
-}
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
-
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
-
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var captionText = document.getElementById("caption");
+
   if (n > slides.length) {
     slideIndex = 1;
   }
   if (n < 1) {
     slideIndex = slides.length;
   }
+
   for (i = 0; i < slides.length; i++) {
+    slides[i].style.opacity = "0"; // Mulai transparan
     slides[i].style.display = "none";
   }
 
   slides[slideIndex - 1].style.display = "block";
-  captionText.innerHTML = dots[slideIndex - 1].alt;
+  setTimeout(() => {
+    slides[slideIndex - 1].style.opacity = "1"; // Tambahkan efek fade
+  }, 10);
+
+  captionText.innerHTML = slides[slideIndex - 1].alt;
 }
